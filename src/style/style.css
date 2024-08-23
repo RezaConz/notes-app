@@ -1,0 +1,157 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  height: 100vh;
+  background-color: #e3e8f8;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  width: 100%;
+}
+
+.sidebar {
+  min-width: 10vw;
+  background-color: white;
+  color: #2d3a5f;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar h1 {
+  margin: 0;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.nav-btn {
+  background-color: #1c2740;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.main-content {
+  padding: 20px;
+  max-width: 90vw;
+}
+
+.add-note {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.add-note h2 {
+  margin-top: 0;
+}
+
+.add-note input,
+.add-note textarea {
+  max-width: 90%;
+  min-width: 90%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: thin;
+}
+
+#add-note-btn {
+  background-color: #2d3a5f;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.my-notes h2 {
+  margin-top: 0;
+}
+
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.note-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.note-card h3 {
+  margin-top: 0;
+}
+
+.note-card p {
+  flex-grow: 1;
+}
+
+.note-card .note-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.note-card .note-footer span {
+  font-size: 12px;
+  color: #666;
+}
+
+.note-card .note-footer button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.loading {
+  width: 300px;
+  height: 300px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  background: transparent;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#error-message {
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 5px;
+  padding: 10px;
+  color: #721c24;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+  .main-content {
+    padding: 20px;
+    min-width: 90vw;
+  }
+}
